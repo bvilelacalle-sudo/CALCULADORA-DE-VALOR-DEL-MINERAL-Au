@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora de Valor del Mineral Au</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Calculadora de valor del mineral Au</h1>
+        <p>Completa los datos del lote para obtener el precio unitario, subtotal, IGV y total.</p>
+      </header>
+
+      <section class="card">
+        <form id="calculator-form" autocomplete="off">
+          <div class="grid">
+            <label>
+              TMH (peso húmedo)
+              <input type="number" step="0.01" min="0" id="tmh" required />
+            </label>
+            <label>
+              % H2O
+              <input type="number" step="0.01" min="0" id="h2o" required />
+            </label>
+            <label>
+              Ley Au (oz/tc)
+              <input type="number" step="0.0001" min="0" id="ley-au" required />
+            </label>
+            <label>
+              % Recuperación Au
+              <input type="number" step="0.01" min="0" id="recuperacion" required />
+            </label>
+            <label>
+              Maquila (US$/tc)
+              <input type="number" step="0.01" min="0" id="maquila" required />
+            </label>
+            <label>
+              R.C. (US$/oz)
+              <input type="number" step="0.01" min="0" id="rc" required />
+            </label>
+            <label>
+              Consumo de reactivos (US$/tc)
+              <input type="number" step="0.01" min="0" id="reactivos" required />
+            </label>
+            <label>
+              Precio internacional del oro (INTER) (US$/oz)
+              <input type="number" step="0.01" min="0" id="inter" required />
+            </label>
+          </div>
+          <div class="actions">
+            <button type="submit">Calcular</button>
+            <button type="reset" id="reset">Limpiar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Resumen del lote</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Dato</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody id="results-body">
+              <tr>
+                <td colspan="2" class="placeholder">Ingresa los datos y presiona “Calcular”.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
